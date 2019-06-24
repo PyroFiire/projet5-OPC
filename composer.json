@@ -1,0 +1,12 @@
+{
+    "name": "projet5/opc",
+    "require": {
+        "twig/twig": "v2.11.3"
+    },
+    "authors": [
+        {
+            "name": "Christophe Guinot",
+            "email": "christophe.guinot@hotmail.fr"
+        }
+    ]
+}
