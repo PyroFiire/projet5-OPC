@@ -3,18 +3,24 @@ use Projet5\controller\HomepageController;
 require 'vendor/autoload.php';
 
 
-var_dump($_GET);
+//twig
 
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/view');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false //'/tmp',
+]);
+
+//ROUTER
 $url = '';
 if(isset($_GET['url'])){
 	$url = explode('/', strtolower($_GET['url']));
 }
 
-var_dump($url);
 /*Accueil*/
 if($url=='' || $url[0]=='accueil'){
-	$homepageController = new HomepageController();
+	$homepageController = new HomepageController($twig);
 	$homepageController->run();
+
 /*Les Articles*/
 } elseif(preg_match('#^articles?$#', $url[0])){
 	echo 'Liste des articles';
