@@ -1,19 +1,43 @@
 <?php
+use Projet5\controller\HomepageController;
 require 'vendor/autoload.php';
 
-$router = new App\Router\Router($_GET['url']);
 
-$router->get('/', function(){echo 'accueil';});
-$router->get('/posts', function(){echo 'tous les articles';});
-$router->get('/posts/:id', function($id){
-?>
-	<form action="" method="post">
-		<input type="text" name="name">
-		<button type="submit">Envoyer</button>
-	</form>
-<?php
-});
-$router->post('/posts/:id', function($id){echo 'Poster pour l\'article ' . $id . print_r($_POST, true);});
+var_dump($_GET);
 
-$router->run();
+$url = '';
+if(isset($_GET['url'])){
+	$url = explode('/', strtolower($_GET['url']));
+}
+
+var_dump($url);
+/*Accueil*/
+if($url=='' || $url[0]=='accueil'){
+	$homepageController = new HomepageController();
+	$homepageController->run();
+/*Les Articles*/
+} elseif(preg_match('#^articles?$#', $url[0])){
+	echo 'Liste des articles';
+/*Un article-id*/
+} elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){
+	$idArticle = $params[1];
+	var_dump($idArticle);
+	echo 'Article numero ' . $idArticle;
+/*ajouter-un-article*/
+} elseif($url[0] == 'ajouter-un-article'){
+	echo 'Ajouter-un-article';
+/*modifier-article-id*/
+} elseif(preg_match('#^modifier-article-([0-9]+)$#', $url[0], $params)){
+	$idArticle = $params[1];
+	var_dump($idArticle);
+	echo 'Modifier l\'article numero ' . $idArticle;
+/*connexion*/
+} elseif($url[0]=='connexion'){
+	echo 'Page de connexion';
+/*inscription*/
+} elseif($url[0]=='inscription'){
+	echo 'Page d\'inscription';
+} else {
+	echo 'Erreur 404';
+}
 
