@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/view');
 $twig = new \Twig\Environment($loader, [
-    'cache' => false //'/tmp',
+    'cache' => false //__DIR__ .'/tmp'
 ]);
 
 //ROUTER
