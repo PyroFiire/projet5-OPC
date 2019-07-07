@@ -1,14 +1,7 @@
 <?php
-use Projet5\controller\HomepageController;
-require 'vendor/autoload.php';
 
-
-//twig
-
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/view');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false //__DIR__ .'/tmp'
-]);
+//Loader
+include(__DIR__."/app/loader.php");
 
 //ROUTER
 $url = '';
