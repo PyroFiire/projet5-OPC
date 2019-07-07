@@ -1,4 +1,9 @@
 <?php
+use Projet5\controller\HomepageController;
+use Projet5\controller\BlogPostsController;
+use Projet5\controller\PostController;
+use Projet5\controller\AddPostController;
+use Projet5\controller\EditPostController;
 
 //Loader
 include(__DIR__."/app/loader.php");
@@ -11,25 +16,31 @@ if(isset($_GET['url'])){
 
 /*Accueil*/
 if($url=='' || $url[0]=='accueil'){
-	$homepageController = new HomepageController($twig);
+	$homepageController = new HomepageController();
 	$homepageController->run();
 
 /*Les Articles*/
 } elseif(preg_match('#^articles?$#', $url[0])){
-	echo 'Liste des articles';
+	$blogPostsController = new BlogPostsController();
+	$blogPostsController->run();
+
 /*Un article-id*/
 } elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){
 	$idArticle = $params[1];
-	var_dump($idArticle);
-	echo 'Article numero ' . $idArticle;
+	$postController = new PostController();
+	$postController->run($idArticle);
+
 /*ajouter-un-article*/
 } elseif($url[0] == 'ajouter-un-article'){
-	echo 'Ajouter-un-article';
+	$addPostController = new AddPostController();
+	$addPostController->run();
+
 /*modifier-article-id*/
 } elseif(preg_match('#^modifier-article-([0-9]+)$#', $url[0], $params)){
 	$idArticle = $params[1];
-	var_dump($idArticle);
-	echo 'Modifier l\'article numero ' . $idArticle;
+	$editPostController = new EditPostController();
+	$editPostController->run($idArticle);
+
 /*connexion*/
 } elseif($url[0]=='connexion'){
 	echo 'Page de connexion';

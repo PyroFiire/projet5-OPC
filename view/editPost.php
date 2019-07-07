@@ -1,0 +1,1 @@
+<p>Modifier l'article numero {{idArticle}} </p>

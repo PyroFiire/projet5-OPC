@@ -1,0 +1,1 @@
+<p>La liste des articles (blog posts)</p>

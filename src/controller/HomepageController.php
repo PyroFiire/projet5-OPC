@@ -2,13 +2,8 @@
 
 namespace Projet5\controller;
 
-class HomepageController{
+class HomepageController extends Controller{
 
-	private $twig;
-
-	public function __construct($twig){
-		$this->twig = $twig;
-	}
 	public function run(){
 		echo $this->twig->render('homepage.php', ['name' => 'Fabien']);
 	}

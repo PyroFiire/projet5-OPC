@@ -3,6 +3,7 @@ Projet 5 du parcours PHP / Symfony sur OpenClassrooms - Créez votre premier blo
 
 Create a file : config.php in the folder "app"
 
+(faire un dossier d'execution)
 <?php
 
 $dbServer = "";
