@@ -1,0 +1,46 @@
+
+/*GENERAL*/
+*{
+	font-family: 'Montserrat', 'sans-serif';
+}
+
+
+/*HEADER*/
+header{
+	background-image: url("../pictures/fond.jpg");
+	background-position-y: 50%;
+	background-size: cover;
+	text-align: center;
+	overflow: hidden;
+}
+#avatar{
+	width: 100%;
+	min-width: 300px;
+	min-height: 300px;
+	max-height: 500px;
+	animation: 3s fadeInLeft;
+}
+h1{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 4rem;
+	color: rgb(9, 122, 192);
+	text-shadow: 2px 2px 3px black;
+
+}
+
+@keyframes fadeInLeft {
+  from {
+    margin-right:30%;
+    width: 330%;
+  }
+  to {
+    margin-right:0%;
+    width: 100%;
+  }
+}
+
+/*FORM*/
+input{
+	border : none;
+}
