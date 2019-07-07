@@ -1,4 +1,8 @@
-<?php ?>
+
+<p>page d'accueil avec twig</p>
+<p>affichage d'une variable : {{name}}<p> 
+
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -10,16 +14,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <!-- Page title -->
     <title>le BLOG de Christophe Guinot</title>
   </head>
   <body>
-    <?php echo "menu"; ?>
+    Menu
       <!-- HEADER -->
       <header>
         <div class="container">
-          <img id="avatar" src="pictures/avatar.svg">
+          <img id="avatar" src="public/pictures/avatar.svg">
           <h1>Christophe Guinot</h1>
           <p>Le développeur qu'il vous faut !</p>
           <a href="pdf/cv.pdf">Voir le CV !</a>

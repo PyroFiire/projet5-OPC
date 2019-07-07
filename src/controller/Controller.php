@@ -8,7 +8,7 @@ class Controller{
 
 	public function __construct(){
 		//twig
-		$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../../view');
+		$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../../public/view');
 		$twig = new \Twig\Environment($loader, [
 		    'cache' => false //__DIR__ .'/tmp'
 		]);
