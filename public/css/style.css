@@ -3,10 +3,21 @@
 *{
 	font-family: 'Montserrat', 'sans-serif';
 }
+h1{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 4rem;
+	color: rgb(9, 122, 192);
+	text-shadow: 2px 2px 3px black;
 
+}
 
-/*HEADER*/
-header{
+input{
+	border : none;
+}
+
+/*HOMEPAGE*/
+#presentation{
 	background-image: url("../pictures/fond.jpg");
 	background-position-y: 50%;
 	background-size: cover;
@@ -20,14 +31,7 @@ header{
 	max-height: 500px;
 	animation: 3s fadeInLeft;
 }
-h1{
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 4rem;
-	color: rgb(9, 122, 192);
-	text-shadow: 2px 2px 3px black;
 
-}
 
 @keyframes fadeInLeft {
   from {
@@ -38,9 +42,4 @@ h1{
     margin-right:0%;
     width: 100%;
   }
-}
-
-/*FORM*/
-input{
-	border : none;
 }
