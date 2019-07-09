@@ -1,4 +1,4 @@
-{% extends 'layout.php' %}
+{% extends 'template.php' %}
 
 {% block page_title %}
 <title>Modifier l'article numero {{idArticle}} </title>

@@ -1,4 +1,4 @@
-{% extends 'layout.php' %}
+{% extends 'template.php' %}
 
 {% block page_title %}
 <titles>Les articles</titles>
