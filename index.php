@@ -1,9 +1,13 @@
 <?php
+
 use Projet5\controller\HomepageController;
 use Projet5\controller\BlogPostsController;
 use Projet5\controller\PostController;
 use Projet5\controller\AddPostController;
 use Projet5\controller\EditPostController;
+use Projet5\controller\ConnexionController;
+use Projet5\controller\RegisterController;
+
 
 //Loader
 include(__DIR__."/app/loader.php");
@@ -43,10 +47,12 @@ if($url=='' || $url[0]=='accueil'){
 
 /*connexion*/
 } elseif($url[0]=='connexion'){
-	echo 'Page de connexion';
+	$connexionController = new ConnexionController();
+	$connexionController->run();
 /*inscription*/
 } elseif($url[0]=='inscription'){
-	echo 'Page d\'inscription';
+	$registerController = new RegisterController();
+	$registerController->run($userModel);
 } else {
 	echo 'Erreur 404';
 }
