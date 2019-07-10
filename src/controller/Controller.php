@@ -5,6 +5,7 @@ namespace Projet5\controller;
 class Controller{
 
 	protected $twig;
+	protected $userDatas = [];
 
 	public function __construct(){
 		//twig
@@ -14,5 +15,4 @@ class Controller{
 		]);
 		$this->twig = $twig;
 	}
-	
 }

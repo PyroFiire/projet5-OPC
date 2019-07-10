@@ -16,12 +16,12 @@
   <div class="container">
     <h2>Formulaire de contact</h2>
     <div id="name" class="row">
-      <label class="col-3" for="firstname">Prénom :</label>
-      <input class="col-3" type="text" name="firstname" id="firstname" value="PHPidFirstname"/>
+      <label class="col-3" for="firstname">Prénom/Pseudo :</label>
+      <input class="col-3" type="text" name="firstname" id="firstname" value="{{userDatas.pseudo}}"/>
       <label class="col-3" for="lastname">Nom :</label>
-      <input class="col-3" type="text" name="lastname" id="lastname" value="PHPidLastname"/>
+      <input class="col-3" type="text" name="lastname" id="lastname"/>
       <label class="col-3" for="email">Email :</label>
-      <input class="col-3" type="email" name="email" id="email" value="PHPidEmail"/>
+      <input class="col-3" type="email" name="email" id="email" value="{{userDatas.email}}"/>
       <div class="offset-6"></div>
       <label class="col-3" for="message">Votre message :</label>
       <textarea class="col-9" name="message" id="message" rows="3"></textarea>

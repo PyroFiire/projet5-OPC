@@ -23,8 +23,8 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="Accueil">Accueil</a>
             <a class="nav-item nav-link" href="Articles">Les articles</a>
-            <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
             {% if SESSION.IdConnectedUser is defined %}
+              <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
               <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
             {%else%}
             <a class="nav-item nav-link" href="Connexion">Connexion</a>

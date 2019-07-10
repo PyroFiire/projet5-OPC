@@ -21,7 +21,7 @@ if(isset($_GET['url'])){
 /*Accueil*/
 if($url=='' || $url[0]=='accueil'){
 	$homepageController = new HomepageController();
-	$homepageController->run();
+	$homepageController->run($userModel);
 
 /*Les Articles*/
 } elseif(preg_match('#^articles?$#', $url[0])){
