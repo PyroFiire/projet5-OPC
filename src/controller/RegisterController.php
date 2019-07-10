@@ -59,7 +59,7 @@ class RegisterController extends Controller{
             	$error['sql'] = 'le pseudo ou l\'email existe déjà';
             }
         }
-        //display the form with errors
+        //display the form with errors and datas form
         echo $this->twig->render('register.php', ['error' => $error, 'form' => $form] );
     }
 }

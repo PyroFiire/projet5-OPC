@@ -25,6 +25,7 @@
 	<br>
 		<input type="submit" value="Valider">
 </form>
+<!--errors-->
 <p>
 {{ error.sql }}
 {{ error.pseudo }}
@@ -32,6 +33,6 @@
 {{ error.email }}
 {{ error.password }}
 {{ error.confirm_password }}
-
 </p>
+
 {% endblock %}

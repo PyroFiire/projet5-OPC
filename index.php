@@ -48,7 +48,7 @@ if($url=='' || $url[0]=='accueil'){
 /*connexion*/
 } elseif($url[0]=='connexion'){
 	$connexionController = new ConnexionController();
-	$connexionController->run();
+	$connexionController->run($userModel);
 /*inscription*/
 } elseif($url[0]=='inscription'){
 	$registerController = new RegisterController();

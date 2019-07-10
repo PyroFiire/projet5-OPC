@@ -2,35 +2,31 @@
 
 namespace Projet5\model;
 
-
-//Cette classe à la charge de charger et décharger les utilisateurs depuis une base de données
-
-
 class UserModel extends Model {
 
-    //charge un utilisateur
-/*    public function load($id) {
+    //load user
+    public function load($id) {
 
-	    $req = $this->_pdo->prepare('SELECT * FROM `users` WHERE `id`= :id;');
+	    $req = $this->pdo->prepare('SELECT * FROM `users` WHERE `id`= :id;');
 	    $req->execute(['id'=>$id]);
-	    $userDatas = $req->fetch(PDO::FETCH_ASSOC);
+	    $userDatas = $req->fetch(\PDO::FETCH_ASSOC);
 
 	    return $userDatas;
     }
 
-	//Return l'id de l'utilisateur grâce à son email
+	//Return id users with email
     public function loadByEmail(string $email) {
 	    $req = $this->pdo->prepare('SELECT id FROM Users WHERE email = :email');
         $req->bindValue(':email', $email );
 	    $req->execute();
         
-	    $row = $req->fetch(PDO::FETCH_ASSOC);
+	    $row = $req->fetch(\PDO::FETCH_ASSOC);
 	    return $this->load($row['id']);
         
     }
-*/
 
-    //insert un utilisateur grâce à son tableau de datas
+
+    //insert user with datas table
     public function insert(array $datas) {
 
         $req = $this->pdo->prepare('INSERT INTO users(pseudo, email, password, rank) VALUES(:pseudo, :email, :password, :rank)');
