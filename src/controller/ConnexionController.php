@@ -50,7 +50,7 @@ class ConnexionController extends Controller{
     ];
 
     ////display the form with errors and datas form
-	echo $this->twig->render('connexion.php', ['error' => $error, 'form' => $form]);
+	echo $this->twig->render('connexion.php', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION]);
 
 	}
 }

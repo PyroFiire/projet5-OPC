@@ -7,7 +7,7 @@ use Projet5\controller\AddPostController;
 use Projet5\controller\EditPostController;
 use Projet5\controller\ConnexionController;
 use Projet5\controller\RegisterController;
-
+use Projet5\controller\DeconnexionController;
 
 //Loader
 include(__DIR__."/app/loader.php");
@@ -53,6 +53,10 @@ if($url=='' || $url[0]=='accueil'){
 } elseif($url[0]=='inscription'){
 	$registerController = new RegisterController();
 	$registerController->run($userModel);
+/*inscription*/
+} elseif($url[0]=='deconnexion'){
+	$registerController = new DeconnexionController();
+	$registerController->run();
 } else {
 	echo 'Erreur 404';
 }

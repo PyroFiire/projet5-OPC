@@ -24,8 +24,12 @@
             <a class="nav-item nav-link" href="Accueil">Accueil</a>
             <a class="nav-item nav-link" href="Articles">Les articles</a>
             <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
+            {% if SESSION.IdConnectedUser is defined %}
+              <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
+            {%else%}
             <a class="nav-item nav-link" href="Connexion">Connexion</a>
-            <a id="last-a-menu" class="nav-item nav-link" href="Inscription">Inscription</a>
+            <a class="nav-item nav-link" href="Inscription">Inscription</a>
+            {%endif%}
           </div>
         </div>
       </nav>
