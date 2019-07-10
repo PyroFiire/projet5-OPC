@@ -26,7 +26,7 @@ if($url=='' || $url[0]=='accueil'){
 /*Les Articles*/
 } elseif(preg_match('#^articles?$#', $url[0])){
 	$blogPostsController = new BlogPostsController();
-	$blogPostsController->run();
+	$blogPostsController->run($postModel);
 
 /*Un article-id*/
 } elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){

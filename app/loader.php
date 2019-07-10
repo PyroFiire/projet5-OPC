@@ -1,6 +1,6 @@
 <?php
 use Projet5\model\UserModel;
-
+use Projet5\model\PostModel;
 
 // Composer Autoloader
 require(__DIR__."/../vendor/autoload.php");
@@ -14,3 +14,4 @@ session_start();
 //Models
 
 $userModel = new UserModel($dataBase);
+$postModel = new PostModel($dataBase);
