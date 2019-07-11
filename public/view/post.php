@@ -1,9 +1,38 @@
 {% extends 'template.php' %}
 
 {% block page_title %}
-<title>Article numero {{idArticle}} </title>
+<title>{{post.title}} </title>
 {% endblock %}
 
 {% block content %}
-<p>Article numero {{idArticle}} </p>
+
+    <p>{{ post.title }}<br>
+    {{ post.standfirst }}<br>
+    Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }} <br>
+    {{ post.contents }}
+	</p>
+
+	<br>
+	<br>
+
+	<ul>
+	    {% for comment in comments %}
+	    	{% if comment.validate == 'yes' %}
+	    		<li>
+			        <p>{{ comment.pseudo }}<br>
+			        {{ comment.contents }}<br>
+			        </p>
+				</li>
+	    	{% else %}
+	    		<li>
+			        <p>{{ comment.pseudo }}<br>
+			        *commentaire en attente de validation*<br>
+			        </p>
+				</li>
+	    	{% endif %}
+
+	    {% endfor %}
+	</ul>
+
+
 {% endblock %}

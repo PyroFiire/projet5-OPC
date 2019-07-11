@@ -4,11 +4,13 @@ namespace Projet5\controller;
 
 class PostController extends Controller{
 
-	private $idArticle;
 
-	public function run($idArticle){
-		$this->idArticle = $idArticle;
+	public function run($postModel,$commentModel, $idPost){
 
-		echo $this->twig->render('post.php', ['idArticle' => $this->idArticle]);
+		$post = $postModel->loadPost($idPost);
+
+		$comments = $commentModel->loadAllCommentsWithIdPost($idPost);
+
+		echo $this->twig->render('post.php', ['post' => $post, 'comments' => $comments]);
 	}
 }

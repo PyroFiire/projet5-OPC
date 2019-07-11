@@ -30,9 +30,9 @@ if($url=='' || $url[0]=='accueil'){
 
 /*Un article-id*/
 } elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){
-	$idArticle = $params[1];
+	$idPost = $params[1];
 	$postController = new PostController();
-	$postController->run($idArticle);
+	$postController->run($postModel, $commentModel, $idPost);
 
 /*ajouter-un-article*/
 } elseif($url[0] == 'ajouter-un-article'){
@@ -41,9 +41,9 @@ if($url=='' || $url[0]=='accueil'){
 
 /*modifier-article-id*/
 } elseif(preg_match('#^modifier-article-([0-9]+)$#', $url[0], $params)){
-	$idArticle = $params[1];
+	$idPost = $params[1];
 	$editPostController = new EditPostController();
-	$editPostController->run($idArticle);
+	$editPostController->run($idPost);
 
 /*connexion*/
 } elseif($url[0]=='connexion'){
