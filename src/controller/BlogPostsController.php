@@ -6,7 +6,7 @@ class BlogPostsController extends Controller{
 
 	public function run($postModel){
 		$posts = $postModel->loadAllPost();
-		echo $this->twig->render('blogPosts.php', ['posts' => $posts]);
+		echo $this->twig->render('blogPosts.php', ['SESSION' => $_SESSION , 'posts' => $posts]);
 	}
 
 }

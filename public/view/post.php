@@ -13,6 +13,13 @@
 	</p>
 
 	<br>
+	{% if SESSION.IdConnectedUser is defined %}
+		<form method="post" action="article-{{ post.id }}" >
+			<legend> Saisissez votre commentaire </legend>
+			<textarea name="contents"></textarea>
+			<input type="submit" value="Valider">
+		</form>
+	{% endif %}
 	<br>
 
 	<ul>
@@ -33,6 +40,7 @@
 
 	    {% endfor %}
 	</ul>
+
 
 
 {% endblock %}
