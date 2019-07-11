@@ -10,11 +10,9 @@
 <ul>
     {% for post in posts %}
     <li>
-        {{ post.id }}<br>
-    	{{ post.title }}<br>
-		{{ post.last_date_change }}<br>
-		{{ post.standfirst }}<br>
-		{{ post.ref_id_users }}<br>
+        <a href="Article-{{ post.id }}">{{ post.title }}</a><br>
+        {{ post.standfirst }}<br>
+        <p>Dernière modification le {{ post.last_date_change }} par  {{ post.pseudo }}</p>
 	</li>
     {% endfor %}
 </ul>
