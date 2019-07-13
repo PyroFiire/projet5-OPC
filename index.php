@@ -37,13 +37,13 @@ if($url=='' || $url[0]=='accueil'){
 /*ajouter-un-article*/
 } elseif($url[0] == 'ajouter-un-article'){
 	$addPostController = new AddPostController();
-	$addPostController->run();
+	$addPostController->run($postModel);
 
 /*modifier-article-id*/
 } elseif(preg_match('#^modifier-article-([0-9]+)$#', $url[0], $params)){
 	$idPost = $params[1];
 	$editPostController = new EditPostController();
-	$editPostController->run($idPost);
+	$editPostController->run($idPost, $postModel);
 
 /*connexion*/
 } elseif($url[0]=='connexion'){
