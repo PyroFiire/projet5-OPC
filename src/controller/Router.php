@@ -6,6 +6,7 @@ use Projet5\controller\Router;
 use Projet5\controller\front\HomepageController;
 use Projet5\controller\front\UserController;
 use Projet5\controller\front\FrontPostController;
+use Projet5\controller\back\AdminController;
 use Projet5\controller\back\BackPostController;
 use Projet5\controller\back\CommentController;
 
@@ -77,8 +78,11 @@ class Router{
 		} elseif($url[0]=='deconnexion'){
 			$userController = new UserController();
 			$userController->deconnexion();
+		} elseif($url[0]=='administration'){
+			$adminController = new AdminController();
+			$adminController->display($userModel);
 		} else {
-			echo 'Erreur 404';
+			echo 'Erreur-404';
 		}
 	}
 }

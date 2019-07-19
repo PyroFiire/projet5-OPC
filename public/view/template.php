@@ -39,6 +39,7 @@
 	      <div class="row">
 	        <div class="col-lg-4 mb-5 mb-lg-0">
 	          <h3>Menu</h3>
+            <a href="Administration">Administration</a>
 	        </div>
 	        <div class="col-lg-4 mb-5 mb-lg-0">
 	          <h3>Réseaux sociaux</h3>

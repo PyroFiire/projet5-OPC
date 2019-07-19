@@ -25,6 +25,12 @@ class UserModel extends Model {
         
     }
 
+    //Return all pending users
+    public function loadPendingUsers() {
+        $req = $this->pdo->prepare('SELECT * FROM `users` WHERE `rank`= "pending" ');
+        $req->execute();
+        return $req;
+    }
 
     //insert user with datas table
     public function insert(array $datas) {
@@ -33,7 +39,21 @@ class UserModel extends Model {
             $req->bindValue(  ':pseudo', $datas['pseudo'] );
     		$req->bindValue(  ':email', $datas['email'] );
     		$req->bindValue(  ':password', password_hash($datas['password'], PASSWORD_DEFAULT) );
-    		$req->bindValue(  ':rank', 'inscrit' );
+    		$req->bindValue(  ':rank', 'pending' );
         $req->execute();
     }
+
+    public function validateUserWithId($idUser) {
+        $req = $this->pdo->prepare('UPDATE Users SET rank=:rank WHERE id=:idUser');
+            $req->bindValue(  ':rank', 'registered' );
+            $req->bindValue(  ':idUser', $idUser );
+        $req->execute();
+    }
+
+    public function deleteUserWithId($idUser) {
+    $req = $this->pdo->prepare('DELETE FROM Users WHERE id=:idUser');
+        $req->bindValue(  ':idUser', $idUser );
+    $req->execute();
+}
+
 }

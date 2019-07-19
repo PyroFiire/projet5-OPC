@@ -36,6 +36,7 @@ class UserController extends TwigController{
         if(password_verify($password, $userDatas['password'])){
         	$_SESSION['IdConnectedUser'] = $userDatas['id'];
             $_SESSION['pseudoConnectedUser'] = $userDatas['pseudo'];
+            $_SESSION['rankConnectedUser'] = $userDatas['rank'];
         	header('location:accueil');
         	exit;
         // or create a error message
@@ -50,7 +51,7 @@ class UserController extends TwigController{
     	"password" => $password
     ];
 
-    ////display the form with errors and datas form
+    //display the form with errors and datas form
 	echo $this->twig->render('connexion.php', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION]);
 
 	}
