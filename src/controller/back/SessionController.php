@@ -3,6 +3,7 @@
 namespace Projet5\controller\back;
 
 use Projet5\controller\TwigController;
+use Projet5\model\UserModel;
 
 class SessionController extends TwigController{
 
@@ -12,7 +13,7 @@ class SessionController extends TwigController{
 		parent::__construct();
 
 		if(!isset($_SESSION['IdConnectedUser'])){
-			header('location:connexion');
+			header('location:erreur-401');
 			exit;
 		}
 	}

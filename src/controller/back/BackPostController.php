@@ -25,17 +25,22 @@ class BackPostController extends SessionController{
 
 	public function editPost($idPost,$postModel){
 
+		//load Post with id
+	    $post = $postModel->loadPost($idPost);
+
+	    //if the user hasn't this post
+	    if($post['pseudo']!==$_SESSION['pseudoConnectedUser']){
+	    	header('location:erreur-403');
+	    	exit;
+	    }
 		//The form is submitted, update the post
 	    if(count($_POST)!==0){
-
-	    	$postModel->updatePost($idPost,['title' => $_POST['title'],
-	    									'standfirst' => $_POST['standfirst'] ,
-	    									'contents' => $_POST['contents']
-	    							]);
+	    	$postModel->updatePost($idPost,[
+	    		'title' => $_POST['title'],
+	    		'standfirst' => $_POST['standfirst'],
+	    		'contents' => $_POST['contents']
+	    		]);
 	    }
-
-	    //load Post with id
-	    $post = $postModel->loadPost($idPost);
 
 	    //display the post or post changed
 		echo $this->twig->render('editPost.php', ['SESSION' => $_SESSION, 'post' => $post]);

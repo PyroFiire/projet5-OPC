@@ -35,6 +35,7 @@ class UserController extends TwigController{
         //if password ok, load id user in the session and go homepage
         if(password_verify($password, $userDatas['password'])){
         	$_SESSION['IdConnectedUser'] = $userDatas['id'];
+            $_SESSION['pseudoConnectedUser'] = $userDatas['pseudo'];
         	header('location:accueil');
         	exit;
         // or create a error message

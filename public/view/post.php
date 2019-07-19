@@ -8,7 +8,11 @@
 
     <p>{{ post.title }}<br>
     {{ post.standfirst }}<br>
-    Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }} <a href="Modifier-Article-{{ post.id }}">Modifier</a><br>
+    Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }}
+    {% if SESSION.pseudoConnectedUser == post.pseudo %}
+    	<a href="Modifier-Article-{{ post.id }}">Modifier</a>
+    {% endif %}
+    <br>
     {{ post.contents }} 
 	</p>
 
