@@ -14,7 +14,7 @@
 
 	<br>
 	{% if SESSION.IdConnectedUser is defined %}
-		<form method="post" action="article-{{ post.id }}" >
+		<form method="post" action="ajouter-un-commentaire-{{ post.id }}" >
 			<legend> Saisissez votre commentaire </legend>
 			<textarea name="contents"></textarea>
 			<input type="submit" value="Valider">

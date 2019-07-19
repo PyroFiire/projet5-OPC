@@ -1,10 +1,12 @@
 <?php
 
-namespace Projet5\controller;
+namespace Projet5\controller\front;
 
-class HomepageController extends Controller{
+use Projet5\controller\TwigController;
 
-	public function run($userModel){
+class HomepageController extends TwigController{
+
+	public function index($userModel){
 
 		//load userDatas if is connected
 		if (isset($_SESSION['IdConnectedUser'])) {

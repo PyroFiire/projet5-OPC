@@ -2,14 +2,14 @@
 
 namespace Projet5\controller;
 
-class Controller{
+class TwigController{
 
 	protected $twig;
 	protected $userDatas = [];
 
 	public function __construct(){
 		//twig
-		$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/../../public/view');
+		$loader = new \Twig\Loader\FilesystemLoader('public/view');
 		$twig = new \Twig\Environment($loader, [
 		    'cache' => false //__DIR__ .'/tmp'
 		]);
