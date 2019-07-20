@@ -47,4 +47,26 @@ class BackPostController extends SessionController{
 	    //display the post or post changed
 		echo $this->twig->render('editPost.php', ['SESSION' => $_SESSION, 'post' => $post]);
 	}
+
+	public function deletePost($idPost,$postModel){
+
+		//load Post with id
+	    $post = $postModel->loadPost($idPost);
+
+	    //if the user hasn't this post, exit
+	    if($post['pseudo']!==$_SESSION['pseudoConnectedUser']){
+	    	header('location:erreur-403');
+	    	exit;
+	    }
+
+	    //delete post if form is submit and redirect
+	    if(isset($_POST['idDeletePost'])){
+	    	$postModel->deletePostWithId($_POST['idDeletePost']);
+	    	header('location:Articles');
+	    	exit;
+	    }
+
+	    //display the confirm delete message
+		echo $this->twig->render('deletePost.php', ['SESSION' => $_SESSION, 'post' => $post]);
+	}
 }

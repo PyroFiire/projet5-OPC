@@ -60,6 +60,12 @@ class Router{
 			$postController = new BackPostController();
 			$postController->addPost($postModel);
 
+		/*supprimer-un-article*/
+		} elseif(preg_match('#^supprimer-article-([0-9]+)$#', $url[0], $params)){
+			$idPost = $params[1];
+			$postController = new BackPostController();
+			$postController->deletePost($idPost, $postModel);
+			
 		/*modifier-article-id*/
 		} elseif(preg_match('#^modifier-article-([0-9]+)$#', $url[0], $params)){
 			$idPost = $params[1];

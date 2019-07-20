@@ -15,6 +15,7 @@
         <p>Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }} 
         {% if SESSION.pseudoConnectedUser == post.pseudo %}
         <a href="Modifier-Article-{{ post.id }}">Modifier</a>
+        <a href="Supprimer-Article-{{ post.id }}">Supprimer</a>
         {% endif %}
     	</p>
 	</li>
