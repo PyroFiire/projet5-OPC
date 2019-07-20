@@ -17,7 +17,8 @@
 	</p>
 
 	<br>
-	{% if SESSION.IdConnectedUser is defined %}
+	<!--display form if user is registered-->
+	{% if SESSION.rankConnectedUser == 'registered' or SESSION.rankConnectedUser == 'admin'%}
 		<form method="post" action="ajouter-un-commentaire-{{ post.id }}" >
 			<legend> Saisissez votre commentaire </legend>
 			<textarea name="contents"></textarea>

@@ -12,8 +12,14 @@ class SessionController extends TwigController{
 
 		parent::__construct();
 
+		//exit if not login
 		if(!isset($_SESSION['IdConnectedUser'])){
 			header('location:erreur-401');
+			exit;
+		}
+		//exit if not valide
+		if($_SESSION['rankConnectedUser'] == 'pending'){
+			header('location:erreur-403');
 			exit;
 		}
 	}

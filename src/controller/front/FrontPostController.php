@@ -8,7 +8,7 @@ class FrontPostController extends TwigController{
 
 
 	public function displayPosts($postModel){
-		$posts = $postModel->loadAllPost();
+		$posts = $postModel->loadAllPost($valide='yes');
 		echo $this->twig->render('blogPosts.php', ['SESSION' => $_SESSION , 'posts' => $posts]);
 	}
 
@@ -16,6 +16,12 @@ class FrontPostController extends TwigController{
 
 		//load the post
 		$post = $postModel->loadPost($idPost);
+
+		//if post not valide display a error message
+		if ($post['validate']=='no'){
+			header('location:erreur-001');
+			exit;
+		}
 
 		//load comments for this post
 		$comments = $commentModel->loadAllCommentsWithIdPost($idPost);

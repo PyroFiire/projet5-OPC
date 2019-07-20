@@ -54,6 +54,6 @@ class UserModel extends Model {
     $req = $this->pdo->prepare('DELETE FROM Users WHERE id=:idUser');
         $req->bindValue(  ':idUser', $idUser );
     $req->execute();
-}
+    }
 
 }

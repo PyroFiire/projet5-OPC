@@ -12,6 +12,11 @@ class CommentModel extends Model {
 	    return $req;
     }
 
+    public function loadInvalidComments() {
+        $req = $this->pdo->prepare('SELECT * FROM `comments` WHERE `validate`= "no" ');
+        $req->execute();
+        return $req;
+    }
 
     public function insertComment(array $datas) {
 
@@ -22,4 +27,17 @@ class CommentModel extends Model {
 		$req->bindValue(  ':id_user', $datas['id_user'] );
     $req->execute();
 	}
+
+    public function validateCommentWithId($idComment) {
+        $req = $this->pdo->prepare('UPDATE Comments SET validate=:validate WHERE id=:idComment');
+            $req->bindValue(  ':validate', 'yes' );
+            $req->bindValue(  ':idComment', $idComment );
+        $req->execute();
+    }
+
+    public function deleteCommentWithId($idComment) {
+    $req = $this->pdo->prepare('DELETE FROM Comments WHERE id=:idComment');
+        $req->bindValue(  ':idComment', $idComment );
+    $req->execute();
+    }
 }

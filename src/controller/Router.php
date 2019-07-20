@@ -70,19 +70,24 @@ class Router{
 		} elseif($url[0]=='connexion'){
 			$userController = new UserController();
 			$userController->connexion($userModel);
+
 		/*inscription*/
 		} elseif($url[0]=='inscription'){
 			$userController = new UserController();
 			$userController->register($userModel);
+
 		/*inscription*/
 		} elseif($url[0]=='deconnexion'){
 			$userController = new UserController();
 			$userController->deconnexion();
+
+		/*administratrion*/
 		} elseif($url[0]=='administration'){
 			$adminController = new AdminController();
-			$adminController->display($userModel);
+			$adminController->display($userModel, $postModel, $commentModel);
+			
 		} else {
-			echo 'Erreur-404';
+			echo 'Erreur-XXX';
 		}
 	}
 }

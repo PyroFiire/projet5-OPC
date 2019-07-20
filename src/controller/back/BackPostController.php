@@ -16,7 +16,7 @@ class BackPostController extends SessionController{
 	    							]);
 
 	    	$lastIdPost = $postModel->LastInsertId();
-	    	header('location:Article-'.$lastIdPost);
+	    	header('location:Accueil');
 	    	exit;
 	    }
 	    //display the form
@@ -40,6 +40,8 @@ class BackPostController extends SessionController{
 	    		'standfirst' => $_POST['standfirst'],
 	    		'contents' => $_POST['contents']
 	    		]);
+	    	//load changed Post with id
+	    	$post = $postModel->loadPost($idPost);
 	    }
 
 	    //display the post or post changed
