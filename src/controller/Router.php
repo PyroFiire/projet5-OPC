@@ -27,13 +27,12 @@ class Router{
 		$postModel = new PostModel($dataBase);
 		$commentModel = new CommentModel($dataBase);
 
-
 		//Router
 		$url = '';
 		if(isset($_GET['url'])){
 			$url = explode('/', strtolower($_GET['url']));
 		}
-
+		var_dump($url);
 		/*Accueil*/
 		if($url=='' || $url[0]=='accueil'){
 			$homepageController = new HomepageController();
@@ -41,8 +40,10 @@ class Router{
 
 		/*Les Articles*/
 		} elseif(preg_match('#^articles?$#', $url[0])){
+			(preg_match('#page([0-9]+)$#', $url[1], $params));
+			$currentPage = intval($params[1]);
 			$postController = new FrontPostController();
-			$postController->displayPosts($postModel);
+			$postController->displayPosts($postModel,$currentPage);
 
 		/*Un article-id with this comments*/
 		} elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){

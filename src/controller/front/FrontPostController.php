@@ -7,9 +7,17 @@ use Projet5\controller\TwigController;
 class FrontPostController extends TwigController{
 
 
-	public function displayPosts($postModel){
-		$posts = $postModel->loadAllPost($valide='yes');
-		echo $this->twig->render('blogPosts.php', ['SESSION' => $_SESSION , 'posts' => $posts]);
+	public function displayPosts($postModel, $currentPage){
+
+		//count number of row valide
+		$countPosts= $postModel->countAllPost($valide='yes');
+		$numberPosts = $countPosts->rowCount();
+		//take Limits for request SQL
+		$paging = $this->paging(POST_PER_PAGE, $numberPosts, $currentPage);
+
+		$posts = $postModel->loadAllPost($valide='yes', $paging['startLimit'], POST_PER_PAGE );
+
+		echo $this->twig->render('blogPosts.php', ['SESSION' => $_SESSION , 'posts' => $posts , 'paging' => $paging]);
 	}
 
 	public function displayPost($postModel,$commentModel, $idPost){
@@ -31,5 +39,21 @@ class FrontPostController extends TwigController{
 												'post' => $post,
 												'comments' => $comments
 											]);
+	}
+
+
+	//This function use the $numberPerPage you want and how many row you have in your table for return a array of numbers with the $startlimit, the $currentPage and the $totalPages.
+	private function paging($numberPerPage, $numberRow, $currentPage = 1){
+		
+		//calcul total pages
+		$totalPages = ceil($numberRow/$numberPerPage);
+		//calcul startlimit for request SQL
+		$startLimit=intval(($currentPage-1)*$numberPerPage);
+
+		return $paging = [
+			'startLimit' => $startLimit,
+			'currentPage' => $currentPage,
+			'totalPages' => $totalPages
+		];
 	}
 }

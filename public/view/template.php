@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="Accueil">Accueil</a>
-            <a class="nav-item nav-link" href="Articles">Les articles</a>
+            <a class="nav-item nav-link" href="Articles/Page1">Les articles</a>
             {% if SESSION.IdConnectedUser is defined %}
               <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
               <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
