@@ -27,8 +27,8 @@
               <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
               <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
             {% else %}
-            <a class="nav-item nav-link" href="Connexion">Connexion</a>
-            <a class="nav-item nav-link" href="Inscription">Inscription</a>
+              <a class="nav-item nav-link" href="Connexion">Connexion</a>
+              <a class="nav-item nav-link" href="Inscription">Inscription</a>
             {% endif %}
           </div>
         </div>

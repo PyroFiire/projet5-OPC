@@ -1,7 +1,8 @@
 {
     "name": "projet5/opc",
     "require": {
-        "twig/twig": "v2.11.3"
+        "twig/twig": "v2.11.3",
+        "swiftmailer/swiftmailer": "^6.0"
     },
     "authors": [
         {
