@@ -41,7 +41,7 @@ class AdminController extends SessionController{
 	    //load pending users
 	    $pendingUsers = $userModel->loadPendingUsers();
 	    //load invalide posts
-	    $invalidePosts = $postModel->loadAllPost($valide='no');
+	    $invalidePosts = $postModel->loadAllPost($valide='no', $startlimit=0 , ADMIN_POST_PER_PAGE);
 	    //load invalide comments
 	    $invalideComments = $commentModel->loadInvalidComments();
 

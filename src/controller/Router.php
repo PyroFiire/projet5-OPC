@@ -39,11 +39,11 @@ class Router{
 			$homepageController->index($userModel);
 
 		/*Les Articles*/
-		} elseif(preg_match('#^articles?$#', $url[0])){
-			(preg_match('#page([0-9]+)$#', $url[1], $params));
+		} elseif(preg_match('#^articles?-page([0-9]+)$#', $url[0], $params)){
 			$currentPage = intval($params[1]);
 			$postController = new FrontPostController();
 			$postController->displayPosts($postModel,$currentPage);
+			$url ='';
 
 		/*Un article-id with this comments*/
 		} elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){

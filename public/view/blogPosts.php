@@ -28,7 +28,7 @@
         {% if page == paging.currentPage %}
             {{page}}
         {% else %}
-            <a href="Articles/Page{{page}}">{{page}}</a>
+            <a href="Articles-Page{{page}}">{{page}}</a>
         {% endif %}
     {% endfor %}
 </p>
