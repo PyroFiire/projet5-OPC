@@ -10,7 +10,7 @@
 <ul>
     {% for post in posts %}
     <li>
-        <a href="Article-{{ post.id }}">{{ post.title }}</a><br>
+        <a href="Article-{{ post.id }}-page1">{{ post.title }}</a><br>
         {{ post.standfirst }}<br>
         <p>Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }} 
         {% if SESSION.pseudoConnectedUser == post.pseudo %}

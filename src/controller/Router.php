@@ -27,12 +27,11 @@ class Router{
 		$postModel = new PostModel($dataBase);
 		$commentModel = new CommentModel($dataBase);
 
-		//Router
+		//ROUTER
 		$url = '';
 		if(isset($_GET['url'])){
 			$url = explode('/', strtolower($_GET['url']));
 		}
-		var_dump($url);
 		/*Accueil*/
 		if($url=='' || $url[0]=='accueil'){
 			$homepageController = new HomepageController();
@@ -46,10 +45,11 @@ class Router{
 			$url ='';
 
 		/*Un article-id with this comments*/
-		} elseif(preg_match('#^articles?-([0-9]+)$#', $url[0], $params)){
+		} elseif(preg_match('#^articles?-([0-9]+)-page([0-9]+)$#', $url[0], $params)){
 			$idPost = $params[1];
+			$currentPage = intval($params[2]);
 			$postController = new FrontPostController();
-			$postController->displayPost($postModel, $commentModel, $idPost);
+			$postController->displayPost($postModel, $commentModel, $idPost, $currentPage);
 
 		/*ajouter-un-commentaire-idPost*/
 		} elseif(preg_match('#^ajouter-un-commentaire-([0-9]+)$#', $url[0], $params)){

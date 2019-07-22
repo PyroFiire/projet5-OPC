@@ -17,10 +17,14 @@ class FrontPostController extends TwigController{
 
 		$posts = $postModel->loadAllPost($valide='yes', $paging['startLimit'], POST_PER_PAGE );
 
-		echo $this->twig->render('blogPosts.php', ['SESSION' => $_SESSION , 'posts' => $posts , 'paging' => $paging]);
+		echo $this->twig->render('blogPosts.php', [
+			'SESSION' => $_SESSION , 
+			'posts' => $posts , 
+			'paging' => $paging
+		]);
 	}
 
-	public function displayPost($postModel,$commentModel, $idPost){
+	public function displayPost($postModel, $commentModel, $idPost, $currentPage){
 
 		//load the post
 		$post = $postModel->loadPost($idPost);
@@ -33,12 +37,19 @@ class FrontPostController extends TwigController{
 
 		//load comments for this post
 		$comments = $commentModel->loadAllCommentsWithIdPost($idPost);
-
+		//count number of row
+		$numberComments = $comments->rowCount();
+		//take Limits for request SQL
+		$paging = $this->paging(COMMENT_PER_PAGE, $numberComments, $currentPage);
+		//load comments with limit
+		$comments = $commentModel->loadAllCommentsWithIdPost($idPost, $paging['startLimit'], COMMENT_PER_PAGE);
 		//display post and comments
-		echo $this->twig->render('post.php', [	'SESSION' => $_SESSION,
-												'post' => $post,
-												'comments' => $comments
-											]);
+		echo $this->twig->render('post.php', [	
+			'SESSION' => $_SESSION,
+			'post' => $post,
+			'comments' => $comments,
+			'paging' => $paging
+		]);
 	}
 
 
