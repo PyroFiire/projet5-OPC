@@ -10,7 +10,7 @@ INSTRUCTION
 
 - Define the connection to the database and the constants.
 
-- Import the .sql in your database. *WARNING* If you have a database named "projet5-opc", it will be overwritten
+- Import the projet5-opc.sql in your database. *WARNING* If you have a database named "projet5-opc", it will be overwritten
 
 - You can start the project
 
@@ -19,3 +19,7 @@ INSTRUCTION
 	password : adminadmin
 
  You can change email, pseudo and password in the database.
+
+- for use the userExemple, go valide this in your administration
+	email : user@user.fr
+	password : useruser
