@@ -25,12 +25,12 @@ class HomepageController extends TwigController{
 
 		$mailController = new MailController;
 		$mailController->sendmail(
-			$sujet='test',
+			$sujet='Réponse à votre question',
 			$emailexp='contact@christophe-guinot.fr',
 			$emaildest='christophe.guinot@hotmail.fr',
-			$replyto='christophe.guinot@hotmail.fr',
-			$nomexp='christophe.guinot@hotmail.fr',
-			$messexp='test'
+			$replyto='contact@christophe-guinot.fr',
+			$nomexp='Christophe Guinot',
+			$messexp='Bonjour comment ça va ?'
 		);
 	}
 }

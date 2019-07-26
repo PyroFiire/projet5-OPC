@@ -7,7 +7,14 @@ use \Swift_Message;
 
 class MailController{
 
-    function sendmail($sujet,$emailexp,$emaildest,$replyto,$nomexp,$messexp){
+    function sendmail(
+      $sujet,
+      $emailexp,  //Spécifie l'adresse de la personne à qui le message est destiné
+      $emaildest,  //Spécifie les adresses des destinataires prévus
+      $replyto,   //Spécifie l'adresse à laquelle les réponses sont envoyées
+      $nomexp,
+      $messexp
+    ){
 
         require('vendor/autoload.php');
 
@@ -22,7 +29,7 @@ class MailController{
 
         // Create a message
         $message = (new Swift_Message($sujet))
-          ->setFrom([$emailexp => $nomexp]) // ce qui s'affiche dans entete mail 
+          ->setFrom([$emailexp => $nomexp]) // ce qui s'affiche dans entete mail  
           ->setTo($emaildest)
           ->setReplyTo($replyto, $nomexp)
           ->setBody($messexp,'text/html' // Mark the content-type as HTML
