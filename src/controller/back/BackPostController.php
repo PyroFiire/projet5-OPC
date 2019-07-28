@@ -62,7 +62,7 @@ class BackPostController extends SessionController{
 	    //delete post if form is submit and redirect
 	    if(isset($_POST['idDeletePost'])){
 	    	$postModel->deletePostWithId($_POST['idDeletePost']);
-	    	header('location:Articles');
+	    	header('location:Articles-Page1');
 	    	exit;
 	    }
 
