@@ -10,12 +10,8 @@
     {% for pendingUser in pendingUsers %}
     <li>{{pendingUser.pseudo}} / {{pendingUser.email}}</li>
 	<form method="post" action="Administration">
-    	<input type="hidden" name="idValidateUser" value="{{pendingUser.id}}" />
-    	<input type="submit" value="Valider">
-    </form>
-    <form method="post" action="Administration">
-    	<input type="hidden" name="idDeleteUser" value="{{pendingUser.id}}" />
-    	<input type="submit" value="Supprimer">
+    	<button type="submit" name="idValidateUser" value="{{pendingUser.id}}">Valider</button>
+    	<button type="submit" name="idDeleteUser" value="{{pendingUser.id}}">Supprimer</button>
     </form>
     {% endfor %}
 </ul>
@@ -29,12 +25,8 @@
         Auteur : {{invalidePost.pseudo}}<br>
     </li>
     <form method="post" action="Administration">
-        <input type="hidden" name="idValidatePost" value="{{invalidePost.id}}" />
-        <input type="submit" value="Valider">
-    </form>
-    <form method="post" action="Administration">
-        <input type="hidden" name="idDeletePost" value="{{invalidePost.id}}" />
-        <input type="submit" value="Supprimer">
+        <button type="submit" name="idValidatePost" value="{{invalidePost.id}}">Valider</button>
+        <button type="submit" name="idDeletePost" value="{{invalidePost.id}}">Supprimer</button>
     </form>
     {% endfor %}
 </ul>
@@ -43,12 +35,8 @@
     {% for invalideComment in invalideComments %}
     <li>{{invalideComment.contents}}</li>
     <form method="post" action="Administration">
-        <input type="hidden" name="idValidateComment" value="{{invalideComment.id}}" />
-        <input type="submit" value="Valider">
-    </form>
-    <form method="post" action="Administration">
-        <input type="hidden" name="idDeleteComment" value="{{invalideComment.id}}" />
-        <input type="submit" value="Supprimer">
+        <button type="submit" name="idValidateComment" value="{{invalideComment.id}}">Valider</button>
+        <button type="submit" name="idDeleteComment" value="{{invalideComment.id}}">Supprimer</button>
     </form>
     {% endfor %}
 </ul>

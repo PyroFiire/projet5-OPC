@@ -11,7 +11,28 @@ class AdminController extends SessionController{
 	    	exit;
 	    }
 
-	    //valide user if form is submit
+	    //controle if a POST variable exist and execute
+	    $this->controleForms($userModel, $postModel, $commentModel);
+
+	    //load pending users
+	    $pendingUsers = $userModel->loadPendingUsers();
+	    //load invalide posts
+	    $invalidePosts = $postModel->loadAllPost($valide='no');
+	    //load invalide comments
+	    $invalideComments = $commentModel->loadInvalidComments();
+
+	    //display 
+		echo $this->twig->render('admin.php', [
+			'SESSION' => $_SESSION,
+			'pendingUsers' => $pendingUsers,
+			'invalidePosts' => $invalidePosts,
+			'invalideComments' => $invalideComments
+		]);
+	}
+
+	private function controleForms($userModel, $postModel, $commentModel){
+
+		//valide user if form is submit
 	    if(isset($_POST['idValidateUser'])){
 	    	$userModel->validateUserWithId($_POST['idValidateUser']);
 	    }
@@ -37,20 +58,5 @@ class AdminController extends SessionController{
 	    if(isset($_POST['idDeleteComment'])){
 	    	$commentModel->deleteCommentWithId($_POST['idDeleteComment']);
 	    }
-
-	    //load pending users
-	    $pendingUsers = $userModel->loadPendingUsers();
-	    //load invalide posts
-	    $invalidePosts = $postModel->loadAllPost($valide='no');
-	    //load invalide comments
-	    $invalideComments = $commentModel->loadInvalidComments();
-
-	    //display 
-		echo $this->twig->render('admin.php', [
-			'SESSION' => $_SESSION,
-			'pendingUsers' => $pendingUsers,
-			'invalidePosts' => $invalidePosts,
-			'invalideComments' => $invalideComments
-		]);
 	}
 }
