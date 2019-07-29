@@ -5,22 +5,38 @@
 {% endblock %}
 
 {% block content %}
-<p>La liste des articles (blog posts)</p>
 
-<ul>
-    {% for post in posts %}
-    <li>
-        <a href="Article-{{ post.id }}-page1">{{ post.title }}</a><br>
-        {{ post.standfirst }}<br>
-        <p>Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }} par  {{ post.pseudo }} 
-        {% if SESSION.pseudoConnectedUser == post.pseudo %}
-        <a href="Modifier-Article-{{ post.id }}">Modifier</a>
-        <a href="Supprimer-Article-{{ post.id }}">Supprimer</a>
-        {% endif %}
-    	</p>
-	</li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="Article-{{ post.id }}-page1">{{ post.title }}</a></h5>
+                        <p class="card-text">{{ post.standfirst }}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">Ecrit par {{ post.pseudo }}</h6>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }}  
+                            </small>
+                        </p>
+                        {% if SESSION.pseudoConnectedUser == post.pseudo %}
+                        <div class="card-footer">
+                            <a class="card-link" href="Modifier-Article-{{ post.id }}">Modifier</a>
+                            <a class="card-link" href="Supprimer-Article-{{ post.id }}">Supprimer</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+    
+
 
 <h2>Pagination</h2>
 <p>
