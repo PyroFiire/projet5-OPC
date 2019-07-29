@@ -58,30 +58,6 @@
 </div>
 
 
-	<ul>
-	    {% for comment in comments %}
-	    	{% if comment.validate == 'yes' %}
-	    		<li>
-			        <p>{{ comment.pseudo }}<br>
-			        {{ comment.contents }}<br>
-			        </p>
-				</li>
-	    	{% else %}
-	    		<li>
-			        <p>{{ comment.pseudo }}<br>
-			        *commentaire en attente de validation*<br>
-			        </p>
-				</li>
-	    	{% endif %}
-
-	    {% endfor %}
-	</ul>
-
-
-
-
-
-
 	<h2>Pagination</h2>
 	<p>
 	    {% for page in 1..paging.totalPages %}
