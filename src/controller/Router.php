@@ -35,8 +35,8 @@ class Router{
 		/*Accueil*/
 		if($url=='' || $url[0]=='accueil'){
 			$homepageController = new HomepageController();
-			$homepageController->index($userModel);
-
+			$homepageController->index($userModel, $url[0]);
+			
 		/*Les Articles*/
 		} elseif(preg_match('#^articles?-page([0-9]+)$#', $url[0], $params)){
 			$currentPage = intval($params[1]);

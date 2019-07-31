@@ -14,6 +14,8 @@ class UserController extends TwigController{
     }
     //unset session for security and inialise $error
     unset($_SESSION['IdConnectedUser']);
+    unset($_SESSION['pseudoConnectedUser']);
+    unset($_SESSION['rankConnectedUser']);
     $error =[];
 
     //control

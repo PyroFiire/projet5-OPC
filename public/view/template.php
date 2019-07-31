@@ -1,45 +1,59 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Le blog de Christophe Guinot">
-    <meta name="author" content="Christophe Guinot">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Personal CSS -->
-    <link rel="stylesheet" href="public/css/style.css">
-    <!-- Page title -->
-    {% block page_title %}{% endblock %}
-  </head>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Le blog de Christophe Guinot">
+        <meta name="author" content="Christophe Guinot">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Personal CSS -->
+        <link rel="stylesheet" href="public/css/style.css">
+        <!-- Page title -->
+        {% block page_title %}{% endblock %}
+    </head>
   <body>
-      <!-- MENU -->
-      <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler col-12" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="Accueil">Accueil</a>
-            <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
-            {% if SESSION.IdConnectedUser is defined %}
-              <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
-              <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
-            {% else %}
-              <a class="nav-item nav-link" href="Connexion">Connexion</a>
-              <a class="nav-item nav-link" href="Inscription">Inscription</a>
-            {% endif %}
-          </div>
-        </div>
-      </nav>
+        <!-- MENU -->
+        <nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler col-12" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="Accueil">Accueil</a>
+                    <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
+                    {% if SESSION.IdConnectedUser is defined %}
+                        <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
+                        <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="Connexion">Connexion</a>
+                        <a class="nav-item nav-link" href="Inscription">Inscription</a>
+                    {% endif %}
+                    {% if SESSION.rankConnectedUser == 'admin' %}
+                        <a class="nav-item nav-link" href="Administration">Administration</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
       {% block content %}{% endblock %}
       <!-- FOOTER -->
       <footer class="container">
 	      <div class="row">
 	        <div class="col-lg-4 mb-5 mb-lg-0">
-	          <h3>Menu</h3>
-            <a href="Administration">Administration</a>
+	            <h3>Menu</h3>
+                <a class="nav-item nav-link" href="Accueil">Accueil</a>
+                <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
+                    {% if SESSION.IdConnectedUser is defined %}
+                        <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
+                        <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="Connexion">Connexion</a>
+                        <a class="nav-item nav-link" href="Inscription">Inscription</a>
+                    {% endif %}
+                    {% if SESSION.rankConnectedUser == 'admin' %}
+                        <a class="nav-item nav-link" href="Administration">Administration</a>
+                    {% endif %}
 	        </div>
 	        <div class="col-lg-4 mb-5 mb-lg-0">
 	          <h3>Réseaux sociaux</h3>
