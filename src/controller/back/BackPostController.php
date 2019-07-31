@@ -16,11 +16,11 @@ class BackPostController extends SessionController{
 	    							]);
 
 	    	$lastIdPost = $postModel->LastInsertId();
-	    	header('location:Accueil');
+	    	header('location:Article-'.$lastIdPost.'-page1');
 	    	exit;
 	    }
 	    //display the form
-		echo $this->twig->render('addPost.php', ['SESSION' => $_SESSION]);
+		echo $this->twig->render('insertPost.php', ['SESSION' => $_SESSION, 'add' => 'add']);
 	}
 
 	public function editPost($idPost,$postModel){
@@ -45,7 +45,7 @@ class BackPostController extends SessionController{
 	    }
 
 	    //display the post or post changed
-		echo $this->twig->render('editPost.php', ['SESSION' => $_SESSION, 'post' => $post]);
+		echo $this->twig->render('insertPost.php', ['SESSION' => $_SESSION, 'post' => $post, 'edit'=> 'edit']);
 	}
 
 	public function deletePost($idPost,$postModel){

@@ -5,11 +5,15 @@
 {% endblock %}
 
 {% block content %}
-
-<p>Voulez vous vraiment supprimer l'article ?</p>
-<form method="post" action="Supprimer-Article-{{post.id}}">
-    <button type="submit" name="idDeletePost" value="{{post.id}}">Valider</button>
-</form>
-
+<div class="container">
+	<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Voulez vous vraiment supprimer l'article ?</h5>
+        </div>
+        <form class="card-footer" method="post" action="Supprimer-Article-{{post.id}}">
+            <button class="btn btn-primary" type="submit" name="idDeletePost" value="{{post.id}}">Valider</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

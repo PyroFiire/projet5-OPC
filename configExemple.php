@@ -6,7 +6,7 @@ $dataBase = [
 	'dbUser' => 'root' ,
 	'dbPass' => ''
 ];
-define("POST_PER_PAGE",    	5);
+define("POST_PER_PAGE",    	4);
 define("COMMENT_PER_PAGE",    	5);
 
 define("EMAIL_SMTP",    	"");

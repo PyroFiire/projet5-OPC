@@ -11,11 +11,9 @@ h1{
 	text-shadow: 2px 2px 3px black;
 
 }
-
-input{
-	border : none;
+.card{
+	margin: 10px ;
 }
-
 /*HOMEPAGE*/
 #presentation{
 	background-image: url("../pictures/fond.jpg");
@@ -30,6 +28,17 @@ input{
 	min-height: 300px;
 	max-height: 500px;
 	animation: 3s fadeInLeft;
+}
+
+#slogan{
+	font-size: 2rem;
+	color: rgb(9, 122, 192);
+	text-shadow: 1px 1px 3px black;
+
+}
+
+#cv{
+	
 }
 
 
