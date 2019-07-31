@@ -7,6 +7,7 @@
 {% block content %}
 
 <div class="container">
+    <h2>Les articles</h2>
     <div class="row">
         {% for post in posts %}
             <div class="col-6">

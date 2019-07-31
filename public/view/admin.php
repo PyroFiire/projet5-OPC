@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+<h2>Administration</h2>
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-user-tab" data-toggle="tab" href="#nav-user" role="tab" aria-controls="nav-user" aria-selected="true">Utilisateurs</a>

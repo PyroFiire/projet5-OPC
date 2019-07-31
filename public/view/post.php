@@ -9,7 +9,7 @@
 <div class="container">
 	<div class="card">
 	    <div class="card-body">
-	        <h5 class="card-title">{{ post.title }}</h5>
+	        <h2 class="card-title">{{ post.title }}</h2>
 	        <p class="card-text">{{ post.standfirst }}</p>
 	        <p class="card-text">{{ post.contents }}</p>
 	        <h6 class="card-subtitle mb-2 text-muted">Ecrit par {{ post.pseudo }}</h6>
