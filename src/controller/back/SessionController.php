@@ -14,12 +14,14 @@ class SessionController extends TwigController{
 
 		//exit if not login
 		if(!isset($_SESSION['IdConnectedUser'])){
-			header('location:erreur-401');
+			$_SESSION['error'] = 'Vous n\'êtes pas connecté';
+			header('location:Accueil');
 			exit;
 		}
 		//exit if not valide
 		if($_SESSION['rankConnectedUser'] == 'pending'){
-			header('location:erreur-403');
+			$_SESSION['error'] = 'Votre compte n\'a pas encore été validé par un administrateur';
+			header('location:Accueil');
 			exit;
 		}
 	}

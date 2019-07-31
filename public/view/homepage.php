@@ -5,14 +5,16 @@
 {% endblock %}
 
 {% block content %}
-  <div id="presentation" class="container-fluid">
+
+<div id="presentation" class="container-fluid">
     <img id="avatar" src="public/pictures/avatar.svg">
     <h1>Christophe Guinot</h1>
     <h2 id="slogan">Le développeur qu'il vous faut !</h2>
     <h2><a class="h3" id="cv" href="public/pdf/cv.pdf">Voir le CV !</a></h2>
-  </div>
+</div>
+
 <!-- FORM -->
-<form method="post" action="#">
+<form method="post" action="Accueil">
     <div class="container">
         <h2>Contactez-moi !</h2>
         <div class="form-group">

@@ -36,6 +36,18 @@
                 </div>
             </div>
         </nav>
+        
+        <div class="container-fluid bg-success">
+            {% if SESSION.success is defined %}
+                <p>{{SESSION.success}}</p>
+            {% endif %}
+        </div>
+        <div class="container-fluid bg-danger">
+            {% if SESSION.error is defined %}
+                <p>{{SESSION.error}}</p>
+            {% endif %}
+        </div>
+
       {% block content %}{% endblock %}
       <!-- FOOTER -->
       <footer class="container">

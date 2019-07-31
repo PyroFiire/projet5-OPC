@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container">
 	<h2>Connexion</h2>
 	<p>Pas encore inscrit ? <a href="inscription">Inscrivez-vous ici !</a></p>

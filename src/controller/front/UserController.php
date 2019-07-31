@@ -9,7 +9,7 @@ class UserController extends TwigController{
 
     //The form is not submitted, posting the connexion form
     if(count($_POST)===0){
-        echo $this->twig->render('connexion.php');
+        echo $this->twig->render('connexion.php', ['SESSION' => $_SESSION]);
         return;
     }
     //unset session for security and inialise $error
@@ -39,6 +39,7 @@ class UserController extends TwigController{
         	$_SESSION['IdConnectedUser'] = $userDatas['id'];
             $_SESSION['pseudoConnectedUser'] = $userDatas['pseudo'];
             $_SESSION['rankConnectedUser'] = $userDatas['rank'];
+            $_SESSION['success'] = 'Vous êtes connecté';
         	header('location:accueil');
         	exit;
         // or create a error message
@@ -52,7 +53,6 @@ class UserController extends TwigController{
     	"email" => $email ,
     	"password" => $password
     ];
-
     //display the form with errors and datas form
 	echo $this->twig->render('connexion.php', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION]);
 
@@ -107,7 +107,8 @@ class UserController extends TwigController{
             //regist in database and display connection
             try{
             $userModel->insert($userDatas);
-            header('location:connexion');
+            $_SESSION['success'] = 'Votre compte à été créé, cependant il doit être validé par un administrateur pour pouvoir écrire des articles ou des commentaires';
+            header('location:Connexion');
             exit;
             // or create a new error_sql message
             }catch(\Exception $e){
@@ -120,8 +121,10 @@ class UserController extends TwigController{
 
     public function deconnexion(){
         unset($_SESSION['IdConnectedUser']);
-        session_destroy();
+        $_SESSION = [];
+        $_SESSION['success'] = 'Vous êtes déconnecté';
         header("Location:Accueil");
+        exit;
     }
 
 

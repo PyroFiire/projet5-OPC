@@ -18,11 +18,12 @@ class HomepageController extends TwigController{
 		//The form is not submitted, display the homepage
 	    if(count($_POST)===0){
 	        echo $this->twig->render('homepage.php', ['SESSION' => $_SESSION, 'userDatas' => $userDatas ]);
-	        return;
+	    }else{
+	    	$this->controleAndSendMail();
 	    }
+	}
 
-	    //the form is submit, controle and send mail
-
+	private function controleAndSendMail(){
 	    //inialise $error
     	$error =[];
 
@@ -56,6 +57,7 @@ class HomepageController extends TwigController{
 				$nomexp = $firstname .' '.  $lastname,
 				$messexp = $message
 			);
+			$_SESSION['success'] = 'L\'email à bien été envoyé';
 			header('location:Accueil');
 			exit;
 		}

@@ -14,9 +14,8 @@ class BackPostController extends SessionController{
 	    								'contents' => $_POST['contents'] ,
 	    								'id_user' => $_SESSION['IdConnectedUser']
 	    							]);
-
-	    	$lastIdPost = $postModel->LastInsertId();
-	    	header('location:Article-'.$lastIdPost.'-page1');
+	    	$_SESSION['success'] = 'L\'article à bien été envoyé, il est maintenant en attente de validation par un administrateur';
+	    	header('location:Accueil');
 	    	exit;
 	    }
 	    //display the form
@@ -30,7 +29,8 @@ class BackPostController extends SessionController{
 
 	    //if the user hasn't this post
 	    if($post['pseudo']!==$_SESSION['pseudoConnectedUser']){
-	    	header('location:erreur-403');
+	    	$_SESSION['error'] = 'Vous n\'êtes pas le propriétaire de cet article';
+	    	header('location:Articles-Page1');
 	    	exit;
 	    }
 		//The form is submitted, update the post
@@ -40,11 +40,12 @@ class BackPostController extends SessionController{
 	    		'standfirst' => $_POST['standfirst'],
 	    		'contents' => $_POST['contents']
 	    		]);
-	    	//load changed Post with id
-	    	$post = $postModel->loadPost($idPost);
+	    	$_SESSION['success'] = 'L\'article à été mis à jour';
+	    	header('location:Article-'.$post['id'].'-page1');
+	    	exit;
 	    }
 
-	    //display the post or post changed
+	    //display the post
 		echo $this->twig->render('insertPost.php', ['SESSION' => $_SESSION, 'post' => $post, 'edit'=> 'edit']);
 	}
 
@@ -55,13 +56,15 @@ class BackPostController extends SessionController{
 
 	    //if the user hasn't this post, exit
 	    if($post['pseudo']!==$_SESSION['pseudoConnectedUser']){
-	    	header('location:erreur-403');
+	    	$_SESSION['error'] = 'Vous n\'êtes pas le propriétaire de cet article';
+	    	header('location:Articles-Page1');
 	    	exit;
 	    }
 
 	    //delete post if form is submit and redirect
 	    if(isset($_POST['idDeletePost'])){
 	    	$postModel->deletePostWithId($_POST['idDeletePost']);
+	    	$_SESSION['success'] = 'L\'article à été supprimé';
 	    	header('location:Articles-Page1');
 	    	exit;
 	    }

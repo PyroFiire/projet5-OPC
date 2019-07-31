@@ -7,7 +7,8 @@ class AdminController extends SessionController{
 	public function display($userModel, $postModel, $commentModel){
 		//if not admin, exit
 	    if($_SESSION['rankConnectedUser']!=='admin'){
-	    	header('location:erreur-403');
+	    	$_SESSION['error'] = 'Cette page est réservé à l\'administrateur';
+	    	header('location:Accueil');
 	    	exit;
 	    }
 

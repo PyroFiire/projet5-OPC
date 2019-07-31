@@ -31,7 +31,8 @@ class FrontPostController extends TwigController{
 
 		//if post not valide display a error message
 		if ($post['validate']=='no'){
-			header('location:erreur-001');
+			$_SESSION['error'] = 'L\'article est en attente de validation par un administrateur';
+			header('location:Articles-Page1');
 			exit;
 		}
 

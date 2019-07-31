@@ -8,3 +8,4 @@ require('vendor/autoload.php');
 use Projet5\controller\Router;
 $router = new Router();
 $router->run();
+$router->unsetSuccessErrorVariables();

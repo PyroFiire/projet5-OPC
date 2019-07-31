@@ -16,6 +16,7 @@ class CommentController extends SessionController{
 	    		'id_user' => $_SESSION['IdConnectedUser']
 	    	]);
 	    	//redirect on post
+	    	$_SESSION['success'] = 'Votre commentaire à été envoyé, il est en attente de validation par un administrateur';
 	    	header('location:Article-'. $idPost);
 	    	exit;
 	    }

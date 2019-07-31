@@ -18,7 +18,13 @@ h1{
 #menu{
 	padding: 20px 0px;
 }
-
+/* SUCCESS and DANGER */
+.bg-success p, .bg-danger p{
+	padding: 10px 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	color: white;
+}
 /*PAGING*/
 .paging{
 	text-align: center;

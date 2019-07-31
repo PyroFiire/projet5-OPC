@@ -35,7 +35,7 @@ class Router{
 		/*Accueil*/
 		if($url=='' || $url[0]=='accueil'){
 			$homepageController = new HomepageController();
-			$homepageController->index($userModel, $url[0]);
+			$homepageController->index($userModel);
 			
 		/*Les Articles*/
 		} elseif(preg_match('#^articles?-page([0-9]+)$#', $url[0], $params)){
@@ -95,7 +95,18 @@ class Router{
 			$adminController->display($userModel, $postModel, $commentModel);
 			
 		} else {
-			echo 'Erreur-XXX';
+			$_SESSION['error'] = 'Erreur 404 - Page non trouvé';
+			$homepageController = new HomepageController();
+			$homepageController->index($userModel);
 		}
+	}
+
+	//unset success variables after display
+	public function unsetSuccessErrorVariables(){
+
+	    unset($_SESSION['success']);
+		unset($_SESSION['error']);
+
+		
 	}
 }
