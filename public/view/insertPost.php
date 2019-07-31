@@ -31,7 +31,7 @@
 			</div>
 			<div class="form-group">
 				<label for="contents">Contenu</label>
-				<textarea class="form-control" name="contents" id="contents">{% if edit is defined %} {{post.contents}} {% endif %}</textarea>
+				<textarea class="form-control" name="contents" id="contents">{% if edit is defined %}{{post.contents}}{% endif %}</textarea>
 			</div>
 			<input class="btn btn-primary" type="submit" value="Envoyer">
 		</form>

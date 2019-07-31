@@ -17,13 +17,13 @@
 	                Dernière modification le {{ post.last_date_change|date("d/m/Y à H:i") }}  
 	            </small>
 	        </p>
-	        {% if SESSION.pseudoConnectedUser == post.pseudo %}
-	        <div class="card-footer">
-	            <a class="card-link" href="Modifier-Article-{{ post.id }}">Modifier</a>
-	            <a class="card-link" href="Supprimer-Article-{{ post.id }}">Supprimer</a>
-	        </div>
-	        {% endif %}
 	    </div>
+        {% if SESSION.pseudoConnectedUser == post.pseudo %}
+        <div class="card-footer">
+            <a class="card-link" href="Modifier-Article-{{ post.id }}">Modifier</a>
+            <a class="card-link" href="Supprimer-Article-{{ post.id }}">Supprimer</a>
+        </div>
+        {% endif %}
 	</div>
 
 	<br>
