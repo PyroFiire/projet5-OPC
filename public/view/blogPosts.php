@@ -33,22 +33,18 @@
     </div>
 </div>
 
-
-
-    
-
-
-<h2>Pagination</h2>
-<p>
-    {% for page in 1..paging.totalPages %}
-        {% if page == paging.currentPage %}
-            {{page}}
-        {% else %}
-            <a href="Articles-Page{{page}}">{{page}}</a>
-        {% endif %}
-    {% endfor %}
-</p>
-
+<div class="paging">
+    <h2>Pagination</h2>
+    <p>
+        {% for page in 1..paging.totalPages %}
+            {% if page == paging.currentPage %}
+                <a>{{page}}</a>
+            {% else %}
+                <a href="Articles-Page{{page}}">{{page}}</a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</div>
 
 
 {% endblock %}

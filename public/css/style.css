@@ -14,6 +14,25 @@ h1{
 .card{
 	margin: 10px ;
 }
+/*NAVBAR*/
+#menu{
+	padding: 20px 0px;
+}
+
+/*PAGING*/
+.paging{
+	text-align: center;
+}
+.paging p a{
+	padding: 8px 16px;
+	text-decoration: none;
+
+}
+.paging p a{
+	background-color: #007bff;
+  	color: white;
+}
+
 /*HOMEPAGE*/
 #presentation{
 	background-image: url("../pictures/fond.jpg");
@@ -30,7 +49,7 @@ h1{
 	animation: 3s fadeInLeft;
 }
 
-#slogan{
+h2{
 	font-size: 2rem;
 	color: rgb(9, 122, 192);
 	text-shadow: 1px 1px 3px black;
@@ -51,4 +70,10 @@ h1{
     margin-right:0%;
     width: 100%;
   }
+}
+
+/*FOOTER*/
+
+footer{
+	margin-top: 20px;
 }

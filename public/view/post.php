@@ -57,17 +57,17 @@
         
 </div>
 
-
+<div class="paging">
 	<h2>Pagination</h2>
 	<p>
 	    {% for page in 1..paging.totalPages %}
 	        {% if page == paging.currentPage %}
-	            {{page}}
+	            <a class ="active" href="Article-{{ post.id }}-Page{{page}}">{{page}}</a>
 	        {% elseif paging.totalPages == 0 %}
 	        {% else %}
 	            <a href="Article-{{ post.id }}-Page{{page}}">{{page}}</a>
 	        {% endif %}
 	    {% endfor %}
 	</p>
-
+</div>
 {% endblock %}

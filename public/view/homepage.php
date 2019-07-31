@@ -9,7 +9,7 @@
     <img id="avatar" src="public/pictures/avatar.svg">
     <h1>Christophe Guinot</h1>
     <h2 id="slogan">Le développeur qu'il vous faut !</h2>
-    <a class="h3" id="cv" href="pdf/cv.pdf">Voir le CV !</a>
+    <h2><a class="h3" id="cv" href="pdf/cv.pdf">Voir le CV !</a></h2>
   </div>
 <!-- FORM -->
 <form method="post" action="#">
