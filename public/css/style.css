@@ -23,12 +23,9 @@ h1{
 .paging{
 	text-align: center;
 }
-.paging p a{
+.paging a{
 	padding: 8px 16px;
 	text-decoration: none;
-
-}
-.paging p a{
 	background-color: #007bff;
   	color: white;
 }
