@@ -17,7 +17,7 @@ class CommentController extends SessionController{
 	    	]);
 	    	//redirect on post
 	    	$_SESSION['success'] = 'Votre commentaire à été envoyé, il est en attente de validation par un administrateur';
-	    	header('location:Article-'. $idPost);
+	    	header('location:Article-'. $idPost .'-Page1');
 	    	exit;
 	    }
 	}

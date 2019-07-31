@@ -12,7 +12,25 @@
     <h2 id="slogan">Le développeur qu'il vous faut !</h2>
     <h2><a class="h3" id="cv" href="public/pdf/cv.pdf">Voir le CV !</a></h2>
 </div>
-
+<div id="portfolio" class="container-fluid">
+    <div class="row justify-content-around">
+        <div class="col-md-3">
+            <img src="public/pictures/projet2.png" alt="Mountains" style="width:100%">
+            <h3>My Work</h3>
+            <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+        </div>
+        <div class="col-md-3">
+            <img src="public/pictures/projet3.png" alt="Mountains" style="width:100%">
+            <h3>My Work</h3>
+            <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+        </div>
+        <div class="col-md-3">
+            <img src="public/pictures/projet4.png" alt="Mountains" style="width:100%">
+            <h3>My Work</h3>
+            <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+        </div>
+    </div>
+</div>
 <!-- FORM -->
 <form method="post" action="Accueil">
     <div class="container">

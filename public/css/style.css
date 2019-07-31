@@ -11,6 +11,12 @@ h1{
 	text-shadow: 2px 2px 3px black;
 
 }
+h2{
+	font-size: 2rem;
+	color: rgb(9, 122, 192);
+	text-shadow: 1px 1px 3px black;
+
+}
 .card{
 	margin: 10px ;
 }
@@ -52,15 +58,16 @@ h1{
 	animation: 3s fadeInLeft;
 }
 
-h2{
-	font-size: 2rem;
-	color: rgb(9, 122, 192);
-	text-shadow: 1px 1px 3px black;
-
-}
-
 #cv{
 	
+}
+#portfolio{
+	background-color: #f1f1f1;
+	padding: 45px 0px 45px 0px;
+}
+#portfolio div div{
+	background-color: white;
+	padding: 10px;
 }
 
 

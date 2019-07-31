@@ -52,7 +52,7 @@
       <!-- FOOTER -->
       <footer class="container">
 	      <div class="row">
-	        <div class="col-lg-4 mb-5 mb-lg-0">
+	        <div class="col-md-4">
 	            <h3>Menu</h3>
                 <a class="nav-item nav-link" href="Accueil">Accueil</a>
                 <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
@@ -67,10 +67,10 @@
                         <a class="nav-item nav-link" href="Administration">Administration</a>
                     {% endif %}
 	        </div>
-	        <div class="col-lg-4 mb-5 mb-lg-0">
+	        <div class="col-md-4">
 	          <h3>Réseaux sociaux</h3>
 	        </div>
-	        <div class="col-lg-4 mb-5 mb-lg-0">
+	        <div class="col-md-4">
 	          <h3>A propos</h3>
 	        </div>
 	      </div>
