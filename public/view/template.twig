@@ -22,9 +22,9 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="Accueil">Accueil</a>
-                    <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
+                    <a class="nav-item nav-link" href="Articles-Page1">BLOG</a>
                     {% if SESSION.IdConnectedUser is defined %}
-                        <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
+                        <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire un article</a>
                         <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
                     {% else %}
                         <a class="nav-item nav-link" href="Connexion">Connexion</a>
@@ -50,18 +50,18 @@
 
       {% block content %}{% endblock %}
       <!-- FOOTER -->
-      <footer class="container">
+      <footer class="container-fluid">
 	      <div class="row">
 	        <div class="col-md-4">
 	            <h3>Menu</h3>
-                <a class="nav-item nav-link" href="Accueil">Accueil</a>
-                <a class="nav-item nav-link" href="Articles-Page1">Les articles</a>
+                <a href="Accueil">Accueil</a>
+                <a href="Articles-Page1">Les articles</a>
                     {% if SESSION.IdConnectedUser is defined %}
-                        <a class="nav-item nav-link" href="Ajouter-un-article">Ecrire votre article</a>
-                        <a class="nav-item nav-link" href="Deconnexion">Déconnexion</a>
+                        <a href="Ajouter-un-article">Ecrire votre article</a>
+                        <a href="Deconnexion">Déconnexion</a>
                     {% else %}
-                        <a class="nav-item nav-link" href="Connexion">Connexion</a>
-                        <a class="nav-item nav-link" href="Inscription">Inscription</a>
+                        <a href="Connexion">Connexion</a>
+                        <a href="Inscription">Inscription</a>
                     {% endif %}
                     {% if SESSION.rankConnectedUser == 'admin' %}
                         <a class="nav-item nav-link" href="Administration">Administration</a>
@@ -69,9 +69,12 @@
 	        </div>
 	        <div class="col-md-4">
 	          <h3>Réseaux sociaux</h3>
+              <a href="">Github</a>
+              <a href="">LinkedIn</a>
 	        </div>
 	        <div class="col-md-4">
 	          <h3>A propos</h3>
+              <a href="public/pdf/cv.pdf">Voir le CV</a>
 	        </div>
 	      </div>
       </footer>

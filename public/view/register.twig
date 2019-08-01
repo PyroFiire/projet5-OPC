@@ -8,22 +8,21 @@
 <div class="container">
 	<h2>Inscription</h2>
 
-	<p>Pour pouvoir créer et répondre aux articles, vous devez vous inscrire avec le formulaire ci-dessous. </p>
-	<p>Déjà inscrit ? <a href="connexion">Connectez-vous !</a></p>
+	<p>Pour pouvoir créer et répondre aux articles, vous devez vous inscrire avec le formulaire ci-dessous. Déjà inscrit ? <a href="connexion">Connectez-vous !</a></p>
 
-	<form method="post" action="inscription" >
+	<form method="post" action="inscription">
 		<div class="form-group">
-			<label for="pseudo">Quel est votre pseudo ?</label>
+			<label for="pseudo">Pseudo</label>
 			<input class="form-control" type="text" name="pseudo" id="pseudo" value="{{form.pseudo}}" />
 			<small class="text-danger">{{ error.pseudo }} {{ error.pseudoSize }} {{ error.sql }}</small>
 		</div>
 		<div class="form-group">
-			<label for="email">Quel est votre email ?</label>
+			<label for="email">Email</label>
 			<input class="form-control" type="email" name="email" id="email" value="{{form.email}}" />
 			<small class="text-danger">{{ error.email }} {{ error.sql }}</small>
 		</div>
 		<div class="form-group">
-			<label for="password">Quel est votre mot de passe ?</label>
+			<label for="password">Mot de passe</label>
 			<input class="form-control" type="password" name="password" id="password" value="{{form.password}}"/>
 			<small class="text-danger">{{ error.password }}</small>
 		</div>

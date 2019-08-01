@@ -9,21 +9,56 @@ h1{
 	font-size: 4rem;
 	color: rgb(9, 122, 192);
 	text-shadow: 2px 2px 3px black;
-
 }
 h2{
+	font-weight: 500;
 	font-size: 2rem;
 	color: rgb(9, 122, 192);
-	text-shadow: 1px 1px 3px black;
+	text-shadow: 1px 1px 2px black;
+	text-align: center;
+	padding: 15px 0px;
+	margin-bottom: 0px;
 
+}
+h3{
+	font-size: 1.6rem;
+	color: rgb(9, 122, 192);
+	text-shadow: 1px 1px 1px black;
+	text-align: center;
+	padding-top: 10px;
+}
+p{
+	margin-bottom: 0px;
+	text-align: justify;
+	padding: 10px;
+	letter-spacing: 0.1rem;
+}
+label{
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 0.3rem;
+}
+input, textarea{
+	letter-spacing: 0.1rem;
 }
 .card{
 	margin: 10px ;
 }
+.standfirst{
+	font-weight: bold;
+}
+
+
 /*NAVBAR*/
 #menu{
-	padding: 20px 0px;
+	padding: 10px 0px;
+	text-align: center;
 }
+#menu a{
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+}
+
 /* SUCCESS and DANGER */
 .bg-success p, .bg-danger p{
 	padding: 10px 0px;
@@ -31,18 +66,24 @@ h2{
 	text-align: center;
 	color: white;
 }
+
 /*PAGING*/
-.paging{
-	text-align: center;
-}
 .paging a{
 	padding: 8px 16px;
 	text-decoration: none;
 	background-color: #007bff;
   	color: white;
 }
+.paging p{
+	text-align: center;
+}
+
 
 /*HOMEPAGE*/
+#titles{
+	background-color: white;
+	text-align: center;
+}
 #presentation{
 	background-image: url("../pictures/fond.jpg");
 	background-position-y: 50%;
@@ -58,16 +99,14 @@ h2{
 	animation: 3s fadeInLeft;
 }
 
-#cv{
-	
-}
 #portfolio{
 	background-color: #f1f1f1;
-	padding: 45px 0px 45px 0px;
+	padding: 0px 0px 0px 0px;
 }
 #portfolio div div{
 	background-color: white;
 	padding: 10px;
+	margin-bottom: 20px;
 }
 
 
@@ -86,4 +125,6 @@ h2{
 
 footer{
 	margin-top: 20px;
+	background-color: #f8f9fa;
+	text-align: center;
 }

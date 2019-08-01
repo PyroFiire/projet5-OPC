@@ -23,7 +23,7 @@
                 </div>
                 <form class="card-footer" method="post" action="Administration">
                     <button class="btn btn-primary" type="submit" name="idValidateUser" value="{{pendingUser.id}}">Valider</button>
-                    <button class="btn btn-primary" type="submit" name="idDeleteUser" value="{{pendingUser.id}}">Supprimer</button>
+                    <button class="btn btn-danger" type="submit" name="idDeleteUser" value="{{pendingUser.id}}">Supprimer</button>
                 </form>
             </div>    
         {% endfor %}
@@ -40,7 +40,7 @@
                 </div>
                 <form class="card-footer" method="post" action="Administration">
                     <button class="btn btn-primary" type="submit" name="idValidatePost" value="{{invalidePost.id}}">Valider</button>
-                    <button class="btn btn-primary" type="submit" name="idDeletePost" value="{{invalidePost.id}}">Supprimer</button>
+                    <button class="btn btn-danger" type="submit" name="idDeletePost" value="{{invalidePost.id}}">Supprimer</button>
                 </form>
             </div>
         {% endfor %}
@@ -54,7 +54,7 @@
                 </div>
                 <form class="card-footer" method="post" action="Administration">
                     <button class="btn btn-primary" type="submit" name="idValidateComment" value="{{invalideComment.id}}">Valider</button>
-                    <button class="btn btn-primary" type="submit" name="idDeleteComment" value="{{invalideComment.id}}">Supprimer</button>
+                    <button class="btn btn-danger" type="submit" name="idDeleteComment" value="{{invalideComment.id}}">Supprimer</button>
                 </form>
             </div>
         {% endfor %}
