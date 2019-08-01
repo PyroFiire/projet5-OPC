@@ -23,7 +23,7 @@ class AdminController extends SessionController{
 	    $invalideComments = $commentModel->loadInvalidComments();
 
 	    //display 
-		echo $this->twig->render('admin.php', [
+		echo $this->twig->render('admin.twig', [
 			'SESSION' => $_SESSION,
 			'pendingUsers' => $pendingUsers,
 			'invalidePosts' => $invalidePosts,

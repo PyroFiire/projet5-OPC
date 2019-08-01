@@ -9,7 +9,7 @@ class UserController extends TwigController{
 
     //The form is not submitted, posting the connexion form
     if(count($_POST)===0){
-        echo $this->twig->render('connexion.php', ['SESSION' => $_SESSION]);
+        echo $this->twig->render('connexion.twig', ['SESSION' => $_SESSION]);
         return;
     }
     //unset session for security and inialise $error
@@ -54,7 +54,7 @@ class UserController extends TwigController{
     	"password" => $password
     ];
     //display the form with errors and datas form
-	echo $this->twig->render('connexion.php', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION]);
+	echo $this->twig->render('connexion.twig', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION]);
 
 	}
 
@@ -62,7 +62,7 @@ class UserController extends TwigController{
 
         //The form is not submitted, posting the registration form
         if(count($_POST)===0){
-            echo $this->twig->render('register.php');
+            echo $this->twig->render('register.twig');
             return;
         }
 
@@ -116,7 +116,7 @@ class UserController extends TwigController{
             }
         }
         //display the form with errors and datas form
-        echo $this->twig->render('register.php', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION] );
+        echo $this->twig->render('register.twig', ['error' => $error, 'form' => $form, 'SESSION' => $_SESSION] );
     }
 
     public function deconnexion(){

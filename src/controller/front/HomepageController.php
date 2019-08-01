@@ -17,7 +17,7 @@ class HomepageController extends TwigController{
 
 		//The form is not submitted, display the homepage
 	    if(count($_POST)===0){
-	        echo $this->twig->render('homepage.php', ['SESSION' => $_SESSION, 'userDatas' => $userDatas ]);
+	        echo $this->twig->render('homepage.twig', ['SESSION' => $_SESSION, 'userDatas' => $userDatas ]);
 	    }else{
 	    	$this->controleAndSendMail();
 	    }
@@ -71,6 +71,6 @@ class HomepageController extends TwigController{
 	    ];
 
 	    //display the form with errors and datas form
-		echo $this->twig->render('homepage.php', ['SESSION' => $_SESSION, 'error' => $error, 'form' => $form ]);
+		echo $this->twig->render('homepage.twig', ['SESSION' => $_SESSION, 'error' => $error, 'form' => $form ]);
 	}
 }

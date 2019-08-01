@@ -17,7 +17,7 @@ class FrontPostController extends TwigController{
 
 		$posts = $postModel->loadAllPost($valide='yes', $paging['startLimit'], POST_PER_PAGE );
 
-		echo $this->twig->render('blogPosts.php', [
+		echo $this->twig->render('blogPosts.twig', [
 			'SESSION' => $_SESSION , 
 			'posts' => $posts , 
 			'paging' => $paging
@@ -45,7 +45,7 @@ class FrontPostController extends TwigController{
 		//load comments with limit
 		$comments = $commentModel->loadAllCommentsWithIdPost($idPost, $paging['startLimit'], COMMENT_PER_PAGE);
 		//display post and comments
-		echo $this->twig->render('post.php', [	
+		echo $this->twig->render('post.twig', [	
 			'SESSION' => $_SESSION,
 			'post' => $post,
 			'comments' => $comments,

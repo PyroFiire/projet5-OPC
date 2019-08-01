@@ -19,7 +19,7 @@ class BackPostController extends SessionController{
 	    	exit;
 	    }
 	    //display the form
-		echo $this->twig->render('insertPost.php', ['SESSION' => $_SESSION, 'add' => 'add']);
+		echo $this->twig->render('insertPost.twig', ['SESSION' => $_SESSION, 'add' => 'add']);
 	}
 
 	public function editPost($idPost,$postModel){
@@ -46,7 +46,7 @@ class BackPostController extends SessionController{
 	    }
 
 	    //display the post
-		echo $this->twig->render('insertPost.php', ['SESSION' => $_SESSION, 'post' => $post, 'edit'=> 'edit']);
+		echo $this->twig->render('insertPost.twig', ['SESSION' => $_SESSION, 'post' => $post, 'edit'=> 'edit']);
 	}
 
 	public function deletePost($idPost,$postModel){
@@ -61,6 +61,12 @@ class BackPostController extends SessionController{
 	    	exit;
 	    }
 
+		//Not delete post if form is cancel and redirect
+	    if(isset($_POST['cancel'])){
+	    	header('location:Article-'.$_POST['cancel'].'-page1');
+	    	exit;
+	    }
+
 	    //delete post if form is submit and redirect
 	    if(isset($_POST['idDeletePost'])){
 	    	$postModel->deletePostWithId($_POST['idDeletePost']);
@@ -70,6 +76,6 @@ class BackPostController extends SessionController{
 	    }
 
 	    //display the confirm delete message
-		echo $this->twig->render('deletePost.php', ['SESSION' => $_SESSION, 'post' => $post]);
+		echo $this->twig->render('deletePost.twig', ['SESSION' => $_SESSION, 'post' => $post]);
 	}
 }
