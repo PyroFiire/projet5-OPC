@@ -54,27 +54,27 @@
 	      <div class="row">
 	        <div class="col-md-4">
 	            <h3>Menu</h3>
-                <a href="Accueil">Accueil</a>
-                <a href="Articles-Page1">Les articles</a>
+                <a class="badge badge-primary" href="Accueil">Accueil</a>
+                <a class="badge badge-primary" href="Articles-Page1">Les articles</a>
                     {% if SESSION.IdConnectedUser is defined %}
-                        <a href="Ajouter-un-article">Ecrire votre article</a>
-                        <a href="Deconnexion">Déconnexion</a>
+                        <a class="badge badge-primary" href="Ajouter-un-article">Ecrire votre article</a>
+                        <a class="badge badge-primary" href="Deconnexion">Déconnexion</a>
                     {% else %}
-                        <a href="Connexion">Connexion</a>
-                        <a href="Inscription">Inscription</a>
+                        <a class="badge badge-primary" href="Connexion">Connexion</a>
+                        <a class="badge badge-primary" href="Inscription">Inscription</a>
                     {% endif %}
                     {% if SESSION.rankConnectedUser == 'admin' %}
-                        <a class="nav-item nav-link" href="Administration">Administration</a>
+                        <a class="badge badge-primary" class="nav-item nav-link" href="Administration">Administration</a>
                     {% endif %}
 	        </div>
 	        <div class="col-md-4">
 	          <h3>Réseaux sociaux</h3>
-              <a href="">Github</a>
-              <a href="">LinkedIn</a>
+              <a class="badge badge-primary" href="https://github.com/PyroFiire/projet5-OPC">Github</a>
+              <a class="badge badge-primary" href="https://www.linkedin.com/in/christophe-guinot-a5b452184/">LinkedIn</a>
 	        </div>
 	        <div class="col-md-4">
 	          <h3>A propos</h3>
-              <a href="public/pdf/cv.pdf">Voir le CV</a>
+              <a class="badge badge-primary" href="public/pdf/cv.pdf">Voir le CV</a>
 	        </div>
 	      </div>
       </footer>
