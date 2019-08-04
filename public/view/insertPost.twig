@@ -19,19 +19,22 @@
 	{% if add is defined %}
 		<form method="post" action="Ajouter-un-article" >
 	{% elseif edit is defined %}
-		<form method="post" action="Modifier-article-{{post.id}}" >
+		<form method="post" action="Modifier-Article-{{post.id}}{{form.id_post}}" >
 	{% endif %}
 			<div class="form-group">
 				<label for="title">Titre</label>
-				<input class="form-control" type="text" name="title" id="title" {% if edit is defined %} value="{{post.title}}" {% endif %} />
+				<input class="form-control" type="text" name="title" id="title" value="{{post.title}}{{form.title}}" />
+				<small class="text-danger">{{ error.title }}</small>
 			</div>
 			<div class="form-group">
 				<label for="standfirst">Châpo</label>
-				<input class="form-control" type="text" name="standfirst" id="standfirst" {% if edit is defined %} value="{{post.standfirst}}" {% endif %}/>
+				<input class="form-control" type="text" name="standfirst" id="standfirst" value="{{post.standfirst}}{{form.standfirst}}"/>
+				<small class="text-danger">{{ error.standfirst }}</small>
 			</div>
 			<div class="form-group">
 				<label for="contents">Contenu</label>
-				<textarea class="form-control" name="contents" id="contents">{% if edit is defined %}{{post.contents}}{% endif %}</textarea>
+				<textarea class="form-control" name="contents" id="contents">{{post.contents}}{{form.contents}}</textarea>
+				<small class="text-danger">{{ error.contents }}</small>
 			</div>
 			<input class="btn btn-primary" type="submit" value="Envoyer">
 		</form>
