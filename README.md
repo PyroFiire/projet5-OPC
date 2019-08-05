@@ -4,7 +4,17 @@ Projet 5 du parcours PHP / Symfony sur OpenClassrooms - Créez votre premier blo
 
 INSTRUCTION
 
--composer
+/ GIT AND COMPOSER /
+
+- use "git clone https://github.com/PyroFiire/projet5-OPC.git " in a folder in your server or virtual server for load the project
+
+- use "cd projet5-opc" for go in the project
+
+- use "composer install" for install dependancy
+
+
+
+/ CONFIG.PHP /
 
 - Renamed the file configExemple.php by config.php and put your values.
 
@@ -14,11 +24,12 @@ INSTRUCTION
 
 - You can start the project
 
+
+/ ACCOUNTS /
+
 - admin connection : 
 	email : admin@admin.fr
 	password : adminadmin
-
- You can change email, pseudo and password in the database.
 
 - for use the userExemple, go valide this in your administration
 	email : user@user.fr
