@@ -6,8 +6,10 @@ class CommentModel extends Model {
 
     //load comments for one post
     public function loadAllCommentsWithIdPost($idPost, $startLimit ='0', $numberPerPage='50') {
-        $req = $this->pdo->prepare('SELECT comments.id, contents, validate, users.pseudo FROM `comments` LEFT JOIN users ON comments.ref_id_users = users.id WHERE ref_id_blog_posts=:idPost ORDER BY comments.id DESC LIMIT '.$startLimit.','.$numberPerPage);
+        $req = $this->pdo->prepare('SELECT comments.id, contents, validate, users.pseudo FROM `comments` LEFT JOIN users ON comments.ref_id_users = users.id WHERE ref_id_blog_posts=:idPost ORDER BY comments.id DESC LIMIT :startLimit , :numberPerPage ');
         $req->bindValue(':idPost', $idPost);
+        $req->bindValue(  ':startLimit', $startLimit, \PDO::PARAM_INT );
+        $req->bindValue(  ':numberPerPage', $numberPerPage, \PDO::PARAM_INT );
         $req->execute();
 	    return $req;
     }

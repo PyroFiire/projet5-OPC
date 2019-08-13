@@ -6,10 +6,10 @@ class PostModel extends Model {
 
     //load all posts , param valide 'yes' or 'no'
     public function loadAllPost($valide, $startLimit = 0, $numberPerPage = 20) {
-        $req = $this->pdo->prepare('SELECT blog_posts.id, title, last_date_change, standfirst,contents, users.pseudo FROM `blog_posts` LEFT JOIN users ON blog_posts.ref_id_users = users.id WHERE validate = :validate ORDER BY last_date_change DESC LIMIT '.$startLimit.','.$numberPerPage);
+        $req = $this->pdo->prepare('SELECT blog_posts.id, title, last_date_change, standfirst,contents, users.pseudo FROM `blog_posts` LEFT JOIN users ON blog_posts.ref_id_users = users.id WHERE validate = :validate ORDER BY last_date_change DESC LIMIT :startLimit , :numberPerPage ');
         $req->bindValue(  ':validate', $valide );
-        //$req->bindValue(  ':startLimit', $startLimit );
-        //$req->bindValue(  ':numberPerPage', $numberPerPage );
+        $req->bindValue(  ':startLimit', $startLimit, \PDO::PARAM_INT );
+        $req->bindValue(  ':numberPerPage', $numberPerPage, \PDO::PARAM_INT );
         $req->execute();
 	    return $req;
     }
