@@ -124,7 +124,8 @@ class BackPostController extends SessionController{
 
 		//Not delete post if form is cancel and redirect
 	    if(isset($_POST['cancel'])){
-	    	header('location:Article-'.$_POST['cancel'].'-page1');
+	    	$cancel = $_POST['cancel'];
+	    	header('location:Article-'. $cancel .'-page1');
 	    	exit;
 	    }
 
