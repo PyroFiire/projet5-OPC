@@ -11,7 +11,7 @@
 	    <div class="card-body">
 	        <h2 class="card-title">{{ post.title }}</h2>
 	        <p class="card-text standfirst">{{ post.standfirst }}</p>
-	        <p class="card-text">{{ post.contents }}</p>
+	        <p class="card-text">{{ post.contents|nl2br }}</p>
 	        <p class="card-text">
 	            <small class="text-muted">
 	            	Ecrit par {{ post.pseudo }} <br>
@@ -42,7 +42,7 @@
 	    {% if comment.validate == 'yes' %}
 	    	<div class="card">
 	            <div class="card-body">
-	                <p class="card-text">{{ comment.contents }}</p>
+	                <p class="card-text">{{ comment.contents|nl2br }}</p>
 	                <h6 class="card-subtitle mb-2 text-muted">Ecrit par {{ comment.pseudo }}</h6>
             	</div>
         	</div>

@@ -35,7 +35,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{invalidePost.title}}</h5>
                     <p class="card-text">{{invalidePost.standfirst}}</p>
-                    <p class="card-text">{{invalidePost.contents}}</p>
+                    <p class="card-text">{{invalidePost.contents|nl2br}}</p>
                     <h6 class="card-subtitle mb-2 text-muted">Ecrit par {{invalidePost.pseudo}}</h6>
                 </div>
                 <form class="card-footer" method="post" action="Administration">
@@ -50,7 +50,7 @@
         {% for invalideComment in invalideComments %}
             <div class="card">
                 <div class="card-body">
-                    <p class="card-text">{{invalideComment.contents}}</p>
+                    <p class="card-text">{{invalideComment.contents|nl2br}}</p>
                 </div>
                 <form class="card-footer" method="post" action="Administration">
                     <button class="btn btn-primary" type="submit" name="idValidateComment" value="{{invalideComment.id}}">Valider</button>
